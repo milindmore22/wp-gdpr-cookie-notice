@@ -72,6 +72,7 @@ class Plugin_Notice_Controller implements Integration {
 	public function load_notice() {
 		add_action( 'wp_footer', [ $this->notice, 'render' ], 100, 0 );
 		add_action( 'login_footer', [ $this->notice, 'render' ], 100, 0 );
+		add_action( 'amp_post_template_footer', [ $this->notice, 'render' ], 100, 0 );
 
 		if ( ! $this->notice instanceof Assets_Aware ) {
 			return;
